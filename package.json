@@ -7,11 +7,15 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "aws-sdk": "^2.728.0",
+    "axios": "^0.19.2",
+    "mongoose": "^5.9.27"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
+    "flickr-sdk": "^3.9.0"
   }
 }

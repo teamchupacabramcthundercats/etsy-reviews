@@ -24,3 +24,10 @@ coverage
 build/
 dist/
 
+#API KEYS
+api_keys.js
+
+#photos folders
+photos/people
+photos/products
+
