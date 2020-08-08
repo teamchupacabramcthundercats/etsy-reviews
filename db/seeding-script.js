@@ -46,6 +46,7 @@ const generateProductsToDB = async () => {
   } catch (error) {
     console.log(error);
   } finally {
+    console.log('DB Seeding Complete...')
     mongoose.disconnect();
   }
 }

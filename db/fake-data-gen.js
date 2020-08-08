@@ -56,7 +56,10 @@ const createReview = () => {
 
 const createReviewsArray = () => {
   // generate 1 - 15 reviews and store in array
-  const count = faker.random.number(15);
+  const count = faker.random.number({
+    min: 1,
+    max: 15
+  });
 
   const reviews = new Array(count).fill(null).map(index => {
     return createReview()
@@ -68,13 +71,3 @@ const createReviewsArray = () => {
 module.exports = {
   createReviewsArray
 }
-
-
-
-
-
-
-
-
-
-

@@ -8,15 +8,22 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "seed-db": "node ./db/seeding-script.js",
+    "server": "nodemon ./server/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "aws-sdk": "^2.728.0",
     "axios": "^0.19.2",
-    "mongoose": "^5.9.27"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "12.1.0",
@@ -29,9 +36,19 @@
     "faker": "^4.1.0",
     "flickr-sdk": "^3.9.0",
     "husky": "0.14.3",
-    "lint-staged": "6.1.0"
+    "jest": "^26.2.2",
+    "jest-extended": "^0.11.5",
+    "lint-staged": "6.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "lint-staged": {
     "*.js": "eslint"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ],
+    "testEnvironment": "node"
   }
 }
