@@ -42,14 +42,14 @@ const getRandomProfilePic = () => {
   return `https://ghrsea11-reviews-pics.s3-us-west-2.amazonaws.com/${fileName}.jpg`;
 };
 
-const createReview = () => (
+const createReview = (productName) => (
   // generate one review with random info
   {
     name: faker.name.firstName(),
     rating: faker.random.number({ min: 1, max: 5 }),
     date: faker.date.between('2019-01-01', '2020-08-07'),
     review: faker.lorem.sentence(),
-    purchased_item_name: faker.commerce.productName(),
+    purchased_item_name: productName,
     purchased_item_pic: getRandomProductPic(),
     attached_pic: getRandomAttachedPic(),
     profile_pic: getRandomProfilePic(),
@@ -63,7 +63,9 @@ const createReviewsArray = () => {
     max: 15,
   });
 
-  const reviews = new Array(count).fill(null).map(() => createReview());
+  const productName = faker.commerce.productName()
+
+  const reviews = new Array(count).fill(null).map(() => createReview(productName));
 
   return reviews;
 };
