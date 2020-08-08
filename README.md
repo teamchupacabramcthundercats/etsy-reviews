@@ -1,13 +1,11 @@
-# Project Name
+# Etsy Reviews Clone - Hack Reactor FEC Project
 
-> Project description
+> This is an attempt at recreating the reviews component on the Etsy website.
+> It's pulling fake reviews from a mongoDB database and pictures hosted in a S3 bucket to place into the React front-end.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/teamchupacabramcthundercats/etsy-gallery
 
 ## Table of Contents
 
@@ -17,7 +15,8 @@
 
 ## Usage
 
-> Some usage instructions
+> Run 'npm install' to install all necessary dependencies.
+> Run db/seeding-script.js to seed mongo database with products and reviews.
 
 ## Requirements
 

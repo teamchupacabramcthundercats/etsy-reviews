@@ -7,15 +7,31 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "precommit": "lint-staged"
+  },
   "dependencies": {
     "aws-sdk": "^2.728.0",
     "axios": "^0.19.2",
     "mongoose": "^5.9.27"
   },
   "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-mfe": "0.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "faker": "^4.1.0",
-    "flickr-sdk": "^3.9.0"
+    "flickr-sdk": "^3.9.0",
+    "husky": "0.14.3",
+    "lint-staged": "6.1.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
   }
 }
