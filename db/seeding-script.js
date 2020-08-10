@@ -9,52 +9,47 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
 db.once('open', () => {
   console.log('connection successful!');
-});
 
-// set schema
-const reviewSchema = new mongoose.Schema({
-  product_id: String,
-  reviews: [{
-    name: String,
-    rating: Number,
-    date: Date,
-    review: String,
-    purchased_item_name: String,
-    purchased_item_pic: String,
-    attached_pic: String,
-    profile_pic: String,
-  }],
-});
+  // set schema
+  const reviewSchema = new mongoose.Schema({
+    product_id: String,
+    reviews: [{
+      name: String,
+      rating: Number,
+      date: Date,
+      review: String,
+      purchased_item_name: String,
+      purchased_item_pic: String,
+      attached_pic: String,
+      profile_pic: String,
+    }],
+  });
 
-// create model
-const Review = mongoose.model('Review', reviewSchema);
+  // create model
+  const Review = mongoose.model('Review', reviewSchema);
 
-// create 100 products and save to db
-const generateProductsToDB = async () => {
+  // generate fake reviews and push to results array
   const results = [];
 
-  try {
-    for (let i = 0; i < 100; i += 1) {
-      // create zero padded product_id
-      const id = i.toString().padStart(5, '0');
+  for (let i = 0; i < 100; i += 1) {
+    // create zero padded product_id
+    const id = i.toString().padStart(5, '0');
 
-      const review = new Review({
-        product_id: id,
-        reviews: fake.createReviewsArray(),
-      });
+    const review = new Review({
+      product_id: id,
+      reviews: fake.createReviewsArray(),
+    });
 
-      review.save();
+    results.push(review);
+  }
 
-      results.push(review);
+  // insert array into db
+  Review.collection.insertMany(results, (error, result) => {
+    if (error) {
+      return console.error('problem seeding DB: ', error);
     }
 
-    await Promise.all(results);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log('DB Seeding Complete...');
-    mongoose.disconnect();
-  }
-};
-
-generateProductsToDB();
+    console.log(result.insertedCount);
+    return mongoose.disconnect();
+  });
+});
