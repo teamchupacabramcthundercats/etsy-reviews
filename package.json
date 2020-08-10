@@ -10,8 +10,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "seed-db": "node ./db/seeding-script.js",
-    "server": "nodemon ./server/index.js",
-    "test": "jest"
+    "server": "nodemon ./server/start.js",
+    "test": "jest --runInBand --detectOpenHandles"
   },
   "dependencies": {
     "aws-sdk": "^2.728.0",
@@ -19,7 +19,8 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.9.27",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "webpack": "^4.44.1"
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
@@ -41,7 +42,9 @@
     "jest-extended": "^0.11.5",
     "lint-staged": "6.1.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "supertest": "^4.0.2",
+    "webpack-dev": "^1.1.1"
   },
   "lint-staged": {
     "*.js": "eslint"

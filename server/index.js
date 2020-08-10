@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const db = require('../db/db.js');
 
 const app = express();
-const port = 3000;
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -15,13 +14,16 @@ app.get('/api/product/:productId', (req, res) => {
 
   db.getReviewsById(productId)
     .then((response) => {
-      res.status(200).send(response);
+      if (response === null) {
+        res.sendStatus(404); // if no record found, return 404
+      } else {
+        res.status(200).send(response);
+      }
     })
     .catch((error) => {
       console.error(error);
+      res.sendStatus(500);
     });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+module.exports = app;
