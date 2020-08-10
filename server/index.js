@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const db = require('../db/db.js');
 
 const app = express();
-const port = 3000;
 
 app.use(express.static('public'));
 app.use(express.json());
@@ -19,9 +18,8 @@ app.get('/api/product/:productId', (req, res) => {
     })
     .catch((error) => {
       console.error(error);
+      res.sendStatus(500);
     });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+module.exports = app;
