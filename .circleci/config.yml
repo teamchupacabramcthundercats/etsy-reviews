@@ -19,7 +19,7 @@ jobs:
           command: npm run seed-db
       - run:
           name: Run tests
-          command: npm run test --runInBand
+          command: npm run test
 workflows:
   node-tests:
     jobs:
