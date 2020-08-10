@@ -15,9 +15,9 @@ it('endpoint responds with correct object', (done) => (
     .expect(200, done)
 ));
 
-it('endpoint responds with status code 500 with wrong id', async (done) => {
+it('endpoint responds with status code 404 with wrong id', async (done) => {
   const response = await request(app).get('/api/product/12345');
 
-  expect(response.status).toBe(500);
+  expect(response.status).toBe(404);
   done();
 });

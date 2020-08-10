@@ -14,7 +14,11 @@ app.get('/api/product/:productId', (req, res) => {
 
   db.getReviewsById(productId)
     .then((response) => {
-      res.status(200).send(response);
+      if (response === null) {
+        res.sendStatus(404); // if no record found, return 404
+      } else {
+        res.status(200).send(response);
+      }
     })
     .catch((error) => {
       console.error(error);
