@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+        - image: circleci/node
+        - image: circleci/mongo
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: MongoDB Install
+          command: |
+            sudo apt-get install -y mongodb
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run Seeding Script
+          command: npm run seed-db
+      - run:
+          name: Run tests
+          command: npm run test
+workflows:
+  node-tests:
+    jobs:
+      - test
