@@ -31,3 +31,6 @@ api_keys.js
 photos/people
 photos/products
 
+#jest coverage tests
+coverage/
+
