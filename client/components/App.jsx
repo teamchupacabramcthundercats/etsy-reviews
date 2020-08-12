@@ -3,12 +3,14 @@ import axios from 'axios';
 import ReviewList from './ReviewList';
 
 const App = () => {
-  const [review, setReview] = useState({ reviews: [] });
+  const [review, setReview] = useState([]);
 
   useEffect(() => {
     const getProductReview = async () => {
-      const result = await axios('/api/product/00002');
-      setReview(result.data);
+      const path = (window.location.pathname).slice(9);
+
+      const result = await axios(`/api/product/${path}`);
+      setReview(result.data.reviews);
     };
 
     getProductReview();
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <div>
+      {/* { review === undefined ? 'Loading...' : <ReviewList reviews={review} /> } */}
       <ReviewList reviews={review} />
     </div>
   );

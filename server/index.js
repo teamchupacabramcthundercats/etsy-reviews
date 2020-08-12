@@ -4,10 +4,11 @@ const db = require('../db/db.js');
 
 const app = express();
 
-app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+
+app.use('/product/:productId', express.static('public'));
 
 app.get('/api/product/:productId', (req, res) => {
   const { productId } = req.params;
