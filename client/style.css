@@ -1,0 +1,49 @@
+.review-list-header {
+  display: flex;
+}
+
+.review-list-header span {
+  display: flex;
+  height: 20px;
+  width: 200px;
+}
+
+.star_svg__star {
+  height: 20px;
+  width: 20px;
+}
+
+.review-header {
+  display: flex;
+}
+
+.review-body {
+  display: flex;
+}
+
+.review-body-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-inner-footer {
+  display: flex;
+}
+
+.review-profile-pic {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.review-purch-pic {
+  border-radius: 6px;
+  height: 35px;
+  width: 35px;
+}
+
+.review-attached-pic {
+  border-radius: 6px;
+  height: 178px;
+  width: 178px;
+}

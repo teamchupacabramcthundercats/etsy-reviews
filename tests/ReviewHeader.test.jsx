@@ -1,10 +1,7 @@
-/**
- * @jest-environment jsdom
-*/
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import App from '../client/components/App';
-import ReviewList from '../client/components/ReviewList';
+import { shallow } from 'enzyme';
+import ReviewHeader from '../client/components/ReviewHeader';
+import { ReactComponent as Star } from '../client/star.svg';
 
 const sampleData = [
   {
@@ -96,25 +93,10 @@ const sampleData = [
     profile_pic: 'https://ghrsea11-reviews-pics.s3-us-west-2.amazonaws.com/238.jpg'
   },
 ];
+const sort = 'recommended';
 
-describe('main page components', () => {
-  it('should render without throwing an error', () => {
-    shallow(<App />);
-  });
-
-  it('should render reviewlist component', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('ReviewList').length).toBe(1);
-  });
-
-  it('should render four reviewlistentry components', () => {
-    const wrapper = shallow(<ReviewList reviews={sampleData} />);
-    expect(wrapper.find('ReviewListEntry').length).toBe(8);
-  });
-
-  it('should change value of select element', () => {
-    const container = mount(<App />);
-    container.find('select').simulate('change', { target: { value: 'newest' } });
-    expect(container.find('select').props().value).toBe('newest');
+describe('review header component', () => {
+  it('should render without errors', () => {
+    shallow(<ReviewHeader reviews={sampleData} sort={sort} />);
   });
 });

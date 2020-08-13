@@ -7,7 +7,7 @@ import ReviewListEntry from './ReviewListEntry';
 
 const ReviewList = ({ reviews }) => (
   <div>
-    {reviews.reviews.map((review) => (
+    {reviews.map((review) => (
       <ReviewListEntry
         key={review._id}
         name={review.name}
@@ -24,11 +24,7 @@ const ReviewList = ({ reviews }) => (
 );
 
 ReviewList.propTypes = {
-  reviews: PropTypes.shape({
-    _id: PropTypes.string,
-    product_id: PropTypes.string,
-    reviews: PropTypes.array.isRequired,
-  }),
+  reviews: PropTypes.array.isRequired,
 };
 
 export default ReviewList;
