@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ReviewHeader from './ReviewHeader';
 import ReviewList from './ReviewList';
 
 const App = () => {
   const [review, setReview] = useState([]);
+  const [sort, setSort] = useState('recommended');
 
   useEffect(() => {
     const getProductReview = async () => {
@@ -16,9 +18,19 @@ const App = () => {
     getProductReview();
   }, []);
 
+  // const sortReviews = () => {
+
+  // };
+
+  const handleSortChange = ({ target }) => {
+    const { value } = target;
+
+    setSort(value);
+  };
+
   return (
     <div>
-      {/* { review === undefined ? 'Loading...' : <ReviewList reviews={review} /> } */}
+      <ReviewHeader reviews={review} handleSortChange={handleSortChange} sort={sort} />
       <ReviewList reviews={review} />
     </div>
   );

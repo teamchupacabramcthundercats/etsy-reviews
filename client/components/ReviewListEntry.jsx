@@ -1,6 +1,9 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+import Star from '../star.svg';
 
 const ReviewListEntry = ({
   profilePic,
@@ -14,19 +17,23 @@ const ReviewListEntry = ({
 }) => (
   <div className="review-list-entry">
     <div className="review-header">
-      <img src={profilePic} alt="profile" />
-      <div>{name}</div>
-      <div>{date}</div>
+      <img className="review-profile-pic" src={profilePic} alt="profile" />
+      <button className="review-links" type="button">{name}</button>
+      <div>{moment(date).format('MMMM D, YYYY')}</div>
     </div>
     <div className="review-body">
-      <div>{rating}</div>
-      <div>{review}</div>
-      <div>{attachedPic}</div>
+      <div className="review-body-inner">
+        <div>{rating === undefined ? 'Loading...' : new Array(rating).fill(null).map((current, i) => <Star key={i} />)}</div>
+        <div>{review}</div>
+      </div>
+      { attachedPic ? <img className="review-attached-pic" src={attachedPic} alt="attached" /> : <div className="review-attached-pic" />}
     </div>
     <div className="review-footer">
       <p>Purchased Item:</p>
-      <img src={purchasedItemPic} alt="purchased item" />
-      <div>{purchasedItemName}</div>
+      <div className="review-inner-footer">
+        <img className="review-purch-pic" src={purchasedItemPic} alt="purchased item" />
+        <button className="review-links" type="button">{purchasedItemName}</button>
+      </div>
     </div>
   </div>
 );
