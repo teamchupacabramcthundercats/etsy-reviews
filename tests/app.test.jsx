@@ -5,7 +5,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from '../client/components/App';
 import ReviewList from '../client/components/ReviewList';
-//import ReviewListEntry from '../client/components/ReviewListEntry';
 
 const sampleData = [
   {
