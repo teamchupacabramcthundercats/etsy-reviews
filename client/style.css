@@ -81,6 +81,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 24px;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .modal-pic img {
@@ -120,8 +123,8 @@
 
 .modal-footer div img {
   border-radius: 6px;
-  height: 35px;
-  width: 35px;
+  height: 49px;
+  width: 62px;
 }
 
 .display-block {
@@ -132,3 +135,35 @@
   display: none;
 }
 
+/* MODAL BUTTONS */
+.prev-btn {
+  position: fixed;
+  top: 48%;
+  left: 26.5%;
+  border-radius: 50%;
+  border-width: 0;
+  height: 48px;
+  width: 48px;
+  background: white;
+  z-index: 3;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+}
+
+.next-btn {
+  position: fixed;
+  top: 48%;
+  left: 71%;
+  border-radius: 50%;
+  border-width: 0;
+  height: 48px;
+  width: 48px;
+  background: white;
+  z-index: 3;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+}
+
+.next-arrow {
+  height: 24px;
+  width: 24px;
+  color: black;
+}
