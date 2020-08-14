@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/require-default-props */
 import React from 'react';
@@ -14,6 +17,8 @@ const ReviewListEntry = ({
   attachedPic,
   purchasedItemName,
   purchasedItemPic,
+  reviewData,
+  handleClick,
 }) => (
   <div className="review-list-entry">
     <div className="review-header">
@@ -26,7 +31,7 @@ const ReviewListEntry = ({
         <div>{rating === undefined ? 'Loading...' : new Array(rating).fill(null).map((current, i) => <Star key={i} />)}</div>
         <div>{review}</div>
       </div>
-      { attachedPic ? <img className="review-attached-pic" src={attachedPic} alt="attached" /> : <div className="review-attached-pic" />}
+      { attachedPic ? <img className="review-attached-pic" src={attachedPic} alt="attached" onClick={() => handleClick(reviewData)} /> : <div className="review-attached-pic" />}
     </div>
     <div className="review-footer">
       <p>Purchased Item:</p>
@@ -47,6 +52,8 @@ ReviewListEntry.propTypes = {
   attachedPic: PropTypes.string,
   purchasedItemName: PropTypes.string.isRequired,
   purchasedItemPic: PropTypes.string.isRequired,
+  reviewData: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default ReviewListEntry;
