@@ -127,7 +127,7 @@ describe('main page components', () => {
     expect(container.find('select').props().value).toBe('newest');
   });
 
-  it('should sort reviews by date', () => {
+  xit('should sort reviews by date', () => {
     const spy = jest.spyOn(App.prototype, 'sortReviews');
 
     const container = mount(<App />);

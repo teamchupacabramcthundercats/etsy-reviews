@@ -52,8 +52,8 @@ ReviewListEntry.propTypes = {
   attachedPic: PropTypes.string,
   purchasedItemName: PropTypes.string.isRequired,
   purchasedItemPic: PropTypes.string.isRequired,
-  reviewData: PropTypes.object.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  reviewData: PropTypes.object,
+  handleClick: PropTypes.func,
 };
 
 export default ReviewListEntry;
