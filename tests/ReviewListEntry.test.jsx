@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReviewListEntry from '../client/components/ReviewListEntry';
-import { ReactComponent as Star } from '../client/star.svg';
+import { ReactComponent as Star } from '../client/graphics/star.svg';
 
 const sampleData = {
   _id: '5f31d7ebab9f3f84d48d7944',
