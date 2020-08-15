@@ -206,3 +206,41 @@
 .exitsymbol_svg__arrow path {
   fill: white;
 }
+
+
+/* PAGE NAV */
+.page-nav {
+  display: flex;
+}
+
+.page-button {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border-width: 0;
+  background: rgba(34, 34, 34, 0.075);
+}
+
+.current-button {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: rgba(34, 34, 34, 0.4);
+  border-width: 0;
+}
+
+.page-nav-next {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border-width: 0;
+  background: rgba(34, 34, 34, 0.075);
+}
+
+.page-nav-prev {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border-width: 0;
+  background: rgba(34, 34, 34, 0.075);
+}
