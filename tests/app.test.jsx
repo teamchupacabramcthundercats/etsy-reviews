@@ -2,9 +2,11 @@
  * @jest-environment jsdom
 */
 import React from 'react';
+import axios from 'axios';
 import { shallow, mount } from 'enzyme';
 import App from '../client/components/App';
 import ReviewList from '../client/components/ReviewList';
+import ReviewListEntry from '../client/components/ReviewListEntry';
 
 const sampleData = [
   {
@@ -97,9 +99,16 @@ const sampleData = [
   },
 ];
 
+jest.mock('axios');
+
 describe('main page components', () => {
+  beforeAll(() => {
+    axios.get.mockResolvedValue(({ reviews: sampleData }));
+  });
+
   it('should render without throwing an error', () => {
-    shallow(<App />);
+    const wrapper = shallow(<App />);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('should render reviewlist component', () => {
@@ -116,5 +125,15 @@ describe('main page components', () => {
     const container = mount(<App />);
     container.find('select').simulate('change', { target: { value: 'newest' } });
     expect(container.find('select').props().value).toBe('newest');
+  });
+
+  xit('should sort reviews by date', () => {
+    const spy = jest.spyOn(App.prototype, 'sortReviews');
+
+    const container = mount(<App />);
+
+    container.find('select').simulate('change', { target: { value: 'newest' } });
+
+    expect(spy).toHaveBeenCalled();
   });
 });

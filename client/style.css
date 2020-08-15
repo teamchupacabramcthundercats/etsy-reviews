@@ -1,3 +1,4 @@
+/* REVIEW HEADER */
 .review-list-header {
   display: flex;
 }
@@ -8,11 +9,7 @@
   width: 200px;
 }
 
-.star_svg__star {
-  height: 20px;
-  width: 20px;
-}
-
+/* REVIEW LIST ENTRY */
 .review-header {
   display: flex;
 }
@@ -46,4 +43,127 @@
   border-radius: 6px;
   height: 178px;
   width: 178px;
+}
+
+/* STYLING FOR AVERAGE STORE RATING STARS */
+.star_svg__star {
+  height: 20px;
+  width: 20px;
+}
+
+/* PHOTO GALLERY */
+.review-gallery-photos {
+  display: flex;
+}
+
+.review-gallery-photos img {
+  border-radius: 6px;
+  height: 178px;
+  width: 178px;
+}
+
+/* MODAL */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  display: flex;
+  height: 480px;
+  width: 840px;
+  position: fixed;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 24px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.modal-pic img {
+  height: 480px;
+  width: 480px;
+}
+
+.modal-info {
+  height: 432px;
+  width: 324px;
+  padding: 18px 24px 18px 24px;
+}
+
+.modal-header {
+  display: flex;
+}
+
+.modal-header img {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.modal-header-namedate {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-footer div {
+  display: flex;
+}
+
+.modal-footer div img {
+  border-radius: 6px;
+  height: 49px;
+  width: 62px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+/* MODAL BUTTONS */
+.prev-btn {
+  position: fixed;
+  top: 48%;
+  left: 26.5%;
+  border-radius: 50%;
+  border-width: 0;
+  height: 48px;
+  width: 48px;
+  background: white;
+  z-index: 3;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+}
+
+.next-btn {
+  position: fixed;
+  top: 48%;
+  left: 71%;
+  border-radius: 50%;
+  border-width: 0;
+  height: 48px;
+  width: 48px;
+  background: white;
+  z-index: 3;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+}
+
+.next-arrow {
+  height: 24px;
+  width: 24px;
+  color: black;
 }
