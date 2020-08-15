@@ -1,20 +1,20 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReviewPhotoGalleryEntry from './ReviewPhotoGalleryEntry';
 
-const ReviewPhotoGallery = ({ reviews }) => {
-  const filterAttached = reviews.filter((review) => (
-    review.attached_pic !== null
-  ));
-
+const ReviewPhotoGallery = ({ attachedReviews, handleClick }) => {
   return (
     <div className="review-gallery">
       <div className="review-gallery-title">
         <h4>Photos from reviews</h4>
       </div>
       <div className="review-gallery-photos">
-        {filterAttached.map((review) => <img src={review.attached_pic} alt="gallery" key={review._id} />)}
+        {attachedReviews.map((review) => (
+          <ReviewPhotoGalleryEntry review={review} key={review._id} handleClick={handleClick} />
+        ))}
       </div>
     </div>
   );
@@ -23,5 +23,6 @@ const ReviewPhotoGallery = ({ reviews }) => {
 export default ReviewPhotoGallery;
 
 ReviewPhotoGallery.propTypes = {
-  reviews: PropTypes.array.isRequired,
+  attachedReviews: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };

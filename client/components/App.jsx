@@ -125,7 +125,7 @@ const App = () => {
       />
       <ReviewHeader reviews={reviews} handleSortChange={handleSortChange} sort={sort} />
       <ReviewList reviews={reviews} handleClick={handlePhotoClick} />
-      <ReviewPhotoGallery reviews={reviews} handleClick={handlePhotoClick} />
+      <ReviewPhotoGallery attachedReviews={attachedPicReviews} handleClick={handlePhotoClick} />
     </div>
   );
 };
