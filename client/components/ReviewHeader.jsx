@@ -3,7 +3,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Star from '../star.svg';
+import Star from '../graphics/star.svg';
 
 const ReviewHeader = ({ reviews, sort, handleSortChange }) => {
   const avgRating = () => { // calculate store's average rating based on ratings in current reviews

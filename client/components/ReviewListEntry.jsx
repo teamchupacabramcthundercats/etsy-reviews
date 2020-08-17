@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Star from '../star.svg';
+import Star from '../graphics/star.svg';
 
 const ReviewListEntry = ({
   profilePic,

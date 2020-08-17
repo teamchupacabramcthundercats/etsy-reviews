@@ -4,20 +4,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Star from '../star.svg';
-import NextArrow from '../nextArrow.svg';
-import PrevArrow from '../prevArrow.svg';
+import Star from '../graphics/star.svg';
+import NextArrow from '../graphics/nextarrow.svg';
+import PrevArrow from '../graphics/prevarrow.svg';
+import ExitArrow from '../graphics/exitsymbol.svg';
 
-const PhotoModal = ({ data, show }) => {
+const PhotoModal = ({
+  data,
+  show,
+  closeModal,
+  nextModal,
+  prevModal,
+}) => {
   const showHideClass = show ? 'modal-container display-block' : 'modal-container display-none';
 
   return (
-    <div className={showHideClass}>
-      <button className="exit-btn" type="button">Exit</button>
-      <button className="prev-btn" type="button">
+    <div className={showHideClass} onClick={closeModal} onKeyPress={closeModal} role="button" tabIndex="0">
+      <button className="exit-btn" type="button" onClick={closeModal}>
+        <span><ExitArrow /></span>
+      </button>
+      <button className="prev-btn" type="button" onClick={prevModal}>
         <span><PrevArrow /></span>
       </button>
-      <button className="next-btn" type="button">
+      <button className="next-btn" type="button" onClick={nextModal}>
         <span><NextArrow /></span>
       </button>
       <div className="modal-main">
@@ -40,8 +49,10 @@ const PhotoModal = ({ data, show }) => {
             <h5>Purchased Item:</h5>
             <div>
               <img src={data.purchased_item_pic} alt="purchased" />
-              <p>{data.purchased_item_name}</p>
-              <p>Sold</p>
+              <div className="modal-footer-info">
+                <p>{data.purchased_item_name}</p>
+                <p>Sold</p>
+              </div>
             </div>
           </div>
         </div>
@@ -53,6 +64,9 @@ const PhotoModal = ({ data, show }) => {
 PhotoModal.propTypes = {
   data: PropTypes.object,
   show: PropTypes.bool,
+  nextModal: PropTypes.func,
+  prevModal: PropTypes.func,
+  closeModal: PropTypes.func,
 };
 
 export default PhotoModal;
