@@ -17,8 +17,8 @@ const ReviewHeader = ({ reviews, sort, handleSortChange }) => {
   };
 
   return (
-    <div className="review-list-header" id="header-focus">
-      <h5>Etsy shop reviews</h5>
+    <div className="review-list-header">
+      <h5>{`${reviews.length} shop reviews`}</h5>
       <span>
         {reviews.length === 0 ? 'Loading...' : new Array(avgRating()).fill(null).map((current, i) => (
           <Star key={i} /> // display # of star based on average rating

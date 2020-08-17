@@ -20,52 +20,52 @@ const ReviewListPageNav = ({ currentPage, totalPages, handleClick }) => {
 
     const makeShortNav = () => {
       if (currentPage === 0 && totalPages === 1) {
-        result.push(<button type="button" disabled className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button current-button" key="first">1</button>);
-        result.push(<button type="button" disabled className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-next" key="next">{next}</button>);
       } else if (currentPage === 0) {
-        result.push(<button type="button" disabled className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button current-button" key="first">1</button>);
         result.push(<button type="button" className="page-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" className="page-button page-nav-next" key="next">{next}</button>);
       } else if (currentPage === 1) {
-        result.push(<button type="button" className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button" key="first">1</button>);
         result.push(<button type="button" className="page-button current-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" disabled className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-next" key="next">{next}</button>);
       }
     };
 
     const makeLongNav = () => {
       if (currentPage === 0) {
-        result.push(<button type="button" disabled className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button current-button" key="first">1</button>);
         result.push(<button type="button" className="page-button" key="2">2</button>);
         result.push(<div key="separator0">...</div>);
         result.push(<button type="button" className="page-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" className="page-button page-nav-next" key="next">{next}</button>);
       } else if (currentPage === 1) {
-        result.push(<button type="button" className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button" key="first">1</button>);
         result.push(<button type="button" className="page-button current-button" key="2">2</button>);
         result.push(<div key="separator0">...</div>);
         result.push(<button type="button" className="page-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" className="page-button page-nav-next" key="next">{next}</button>);
       } else if ((currentPage + 1) === totalPages) {
-        result.push(<button type="button" className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button" key="first">1</button>);
         result.push(<button type="button" className="page-button" key="2">2</button>);
         result.push(<div key="separator0">...</div>);
         result.push(<button type="button" className="page-button current-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" disabled className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" disabled className="page-button page-nav-next" key="next">{next}</button>);
       } else { // if current page is not first, second, or last
-        result.push(<button type="button" className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" className="page-button page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button" key="first">1</button>);
         result.push(<div key="separator1">...</div>);
         result.push(<button type="button" className="page-button current-button" key={currentPage + 1}>{currentPage + 1}</button>);
         result.push(<div key="separator2">...</div>);
         result.push(<button type="button" className="page-button" key="last">{totalPages}</button>);
-        result.push(<button type="button" className="page-nav-next" key="next">{next}</button>);
+        result.push(<button type="button" className="page-button page-nav-next" key="next">{next}</button>);
       }
     };
 

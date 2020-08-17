@@ -32,6 +32,18 @@ const ReviewList = ({ reviews, handleClick }) => {
   }
 
   const changeCurrentPage = (nav) => {
+    // const header = document.getElementById('focus');
+    // header.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start',
+    //   inline: 'start',
+    // });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+
     if (typeof nav === 'number') {
       setCurrentPage(nav);
     } else {
@@ -45,18 +57,13 @@ const ReviewList = ({ reviews, handleClick }) => {
 
   const handleNavBarClick = ({ target }) => {
     if (target.tagName === 'BUTTON') {
-      if (target.className.includes('page-button')) { // if page number is clicked
+      if (target.className.includes('page-nav')) { // if page number is clicked
+        changeCurrentPage(target.className);
+      } else { // if prev or next is clicked
         const index = target.innerText - 1;
         changeCurrentPage(index);
-      } else { // if prev or next is clicked
-        changeCurrentPage(target.className);
       }
     }
-
-    const header = document.getElementById('header-focus');
-    header.scrollIntoView({
-      behavior: 'smooth',
-    });
   };
 
   return (

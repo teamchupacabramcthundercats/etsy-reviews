@@ -115,7 +115,7 @@ const App = () => {
   };
 
   return (
-    <div className="main">
+    <div className="review-main" id="focus">
       <PhotoModal
         data={modalData}
         show={showModal}
