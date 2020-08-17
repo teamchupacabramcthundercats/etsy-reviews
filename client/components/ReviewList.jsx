@@ -52,6 +52,11 @@ const ReviewList = ({ reviews, handleClick }) => {
         changeCurrentPage(target.className);
       }
     }
+
+    const header = document.getElementById('header-focus');
+    header.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
 
   return (

@@ -26,12 +26,12 @@ const ReviewListEntry = ({
       <button className="review-links" type="button">{name}</button>
       <div>{moment(date).format('MMMM D, YYYY')}</div>
     </div>
-    <div className="review-body">
+    <div className={attachedPic === null ? 'review-body-null' : 'review-body'}>
       <div className="review-body-inner">
-        <div>{rating === undefined ? 'Loading...' : new Array(rating).fill(null).map((current, i) => <Star key={i} />)}</div>
-        <div>{review}</div>
+        <div className="review-body-stars">{rating === undefined ? 'Loading...' : new Array(rating).fill(null).map((current, i) => <Star key={i} />)}</div>
+        <div className="review-body-review">{review}</div>
       </div>
-      { attachedPic ? <img className="review-attached-pic" src={attachedPic} alt="attached" onClick={() => handleClick(reviewData)} /> : <div className="review-attached-pic" />}
+      { attachedPic ? <img className="review-attached-pic" src={attachedPic} alt="attached" onClick={() => handleClick(reviewData)} /> : <div /> }
     </div>
     <div className="review-footer">
       <p>Purchased Item:</p>

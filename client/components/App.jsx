@@ -115,7 +115,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="main">
       <PhotoModal
         data={modalData}
         show={showModal}
@@ -124,7 +124,10 @@ const App = () => {
         prevModal={modalPrevPic}
       />
       <ReviewHeader reviews={reviews} handleSortChange={handleSortChange} sort={sort} />
-      <ReviewList reviews={reviews} handleClick={handlePhotoClick} />
+      <ReviewList
+        reviews={reviews}
+        handleClick={handlePhotoClick}
+      />
       <ReviewPhotoGallery attachedReviews={attachedPicReviews} handleClick={handlePhotoClick} />
     </div>
   );

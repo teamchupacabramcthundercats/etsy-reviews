@@ -1,21 +1,113 @@
+/* MAIN CONTAINER */
+.main {
+  width: 810px;
+}
+
 /* REVIEW HEADER */
 .review-list-header {
   display: flex;
+  height: 66px;
+
+}
+
+.review-list-header h5 {
+  display: flex;
+  font-family: "Helvetica", serif;
+  font-size: 26px;
+  letter-spacing: 0.35px;
+  font-weight: 100;
+  align-items: center;
+  margin: 0;
+
 }
 
 .review-list-header span {
   display: flex;
-  height: 20px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+/* review header stars */
+.review-list-header span svg {
+  height: 18px;
+  width: 18px;
+}
+
+/* review header select */
+.review-list-header select {
+  display: flex;
+  margin-left: auto;
+  height: 42px;
   width: 200px;
+  padding: 9px 15px 9px 15px;
+  border-width: 0;
+  font-size: 13px;
+  font-weight: bold;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color border-radius 1s;
+}
+
+.review-list-header select:hover {
+  background-color: rgba(34, 34, 34, 0.075);
+  border-radius: 24px;
 }
 
 /* REVIEW LIST ENTRY */
+
+/* review list entry main */
+.review-list-entry {
+  width: 828px;
+  height: auto;
+  padding: 9px;
+  margin-bottom: 24px;
+}
+
 .review-header {
   display: flex;
+  width: auto;
+  height: 36px;
+  margin-bottom: 6px;
+}
+
+.review-links {
+  font-size: 13px;
+  text-decoration: underline;
+  text-decoration-color: rgb(89, 89, 89);
+  border-width: 0;
+  background: white;
+  padding-right: 0;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+/* review list entry date */
+.review-header div {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+
 }
 
 .review-body {
   display: flex;
+  width: auto;
+  height: 178px;
+  padding-left: 48px;
+  color: rgb(34, 34, 34);
+}
+
+.review-body-null {
+  display: flex;
+  width: auto;
+  height: 62px;
+  padding-left: 48px;
+  color: rgb(34, 34, 34);
+}
+
+.review-body-outer {
+  display: flex;
+  flex-direction: column;
 }
 
 .review-body-inner {
@@ -23,32 +115,64 @@
   flex-direction: column;
 }
 
+/* rating stars inside reviews */
+.review-body-stars {
+  margin-bottom: 6px;
+}
+
+/* review inside review body */
+.review-body-review {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.review-footer {
+  width: auto;
+  padding-left: 48px;
+}
+
+.review-footer p {
+  height: 18px;
+  color: rgb(89, 89, 89);
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-family: 'Roboto', sans-serif;
+}
+
 .review-inner-footer {
   display: flex;
+  height: 36px;
+  align-items: center;
 }
 
 .review-profile-pic {
   border-radius: 50%;
   height: 35px;
   width: 35px;
+  margin-right: 12px;
 }
 
 .review-purch-pic {
   border-radius: 6px;
-  height: 35px;
-  width: 35px;
+  height: 36px;
+  width: 36px;
+  margin-right: 8px;
 }
 
 .review-attached-pic {
   border-radius: 6px;
   height: 178px;
   width: 178px;
+  margin-left: auto;
 }
 
 /* STYLING FOR AVERAGE STORE RATING STARS */
 .star_svg__star {
   height: 20px;
   width: 20px;
+  padding-right: 3px;
 }
 
 /* PHOTO GALLERY */
@@ -211,6 +335,19 @@
 /* PAGE NAV */
 .page-nav {
   display: flex;
+  font-size: 26px;
+  margin-bottom: 36px;
+}
+
+.page-nav button {
+  margin-right: 6px;
+}
+
+.page-nav div {
+  margin-right: 6px;
+  line-height: 42px;
+  letter-spacing: 0.35px;
+  font-size: 20px;
 }
 
 .page-button {
@@ -237,10 +374,79 @@
   background: rgba(34, 34, 34, 0.075);
 }
 
+.page-nav-next svg {
+  height: 18px;
+  width: 18px;
+}
+
 .page-nav-prev {
   height: 36px;
   width: 36px;
   border-radius: 50%;
   border-width: 0;
   background: rgba(34, 34, 34, 0.075);
+}
+
+.page-nav-prev svg {
+  height: 18px;
+  width: 18px;
+}
+
+/* GALLERY */
+.review-gallery {
+  height: 241px;
+  width: 810px;
+}
+
+.review-gallery-title {
+  margin-left: 9px;
+}
+
+.review-gallery-title h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgb(34, 34, 34);
+}
+
+.review-gallery-photos img {
+  height: 189px;
+  width: 189px;
+  padding: 9px;
+  border-radius: 24px;
+}
+
+
+.gallery-prev {
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  border-radius: 50%;
+  border-width: 0;
+  position: relative;
+  top: 85%;
+  left: 2%;
+}
+
+.gallery-prev svg {
+  height: 24px;
+  width: 24px;
+}
+
+.gallery-next {
+  position: relative;
+  top: 65%;
+  left: 94%;
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  border-radius: 50%;
+  border-width: 0;
+}
+
+.gallery-next svg {
+  height: 24px;
+  width: 24px;
 }
