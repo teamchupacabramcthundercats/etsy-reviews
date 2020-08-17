@@ -19,7 +19,11 @@ const ReviewListPageNav = ({ currentPage, totalPages, handleClick }) => {
     );
 
     const makeShortNav = () => {
-      if (currentPage === 0) {
+      if (currentPage === 0 && totalPages === 1) {
+        result.push(<button type="button" disabled className="page-nav-prev" key="prev">{prev}</button>);
+        result.push(<button type="button" className="page-button current-button" key="first">1</button>);
+        result.push(<button type="button" disabled className="page-nav-next" key="next">{next}</button>);
+      } else if (currentPage === 0) {
         result.push(<button type="button" disabled className="page-nav-prev" key="prev">{prev}</button>);
         result.push(<button type="button" className="page-button current-button" key="first">1</button>);
         result.push(<button type="button" className="page-button" key="last">{totalPages}</button>);

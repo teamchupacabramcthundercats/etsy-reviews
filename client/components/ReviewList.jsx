@@ -2,7 +2,7 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReviewListEntry from './ReviewListEntry';
 import ReviewListPageNav from './ReviewListPageNav';
@@ -23,13 +23,13 @@ const ReviewList = ({ reviews, handleClick }) => {
     return results;
   };
 
-  useEffect(() => {
+  if (reviews.length > 4 && totalPages === 0) {
     // split reviews array into arrays of 4;
     setReviewPages(splitReviews());
 
     // set the total number of pages
     setTotalPages(Math.ceil(reviews.length / 4));
-  }, [reviews]);
+  }
 
   const changeCurrentPage = (nav) => {
     if (typeof nav === 'number') {
