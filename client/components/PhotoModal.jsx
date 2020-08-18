@@ -20,13 +20,13 @@ const PhotoModal = ({
 
   return (
     <div className={showHideClass} onClick={closeModal} onKeyPress={closeModal} role="button" tabIndex="0">
-      <button className="exit-btn" type="button" onClick={closeModal}>
+      <button className="r-modal-exit-btn" type="button" onClick={closeModal}>
         <span><ExitArrow /></span>
       </button>
-      <button className="prev-btn" type="button" onClick={prevModal}>
+      <button className="r-modal-prev-btn" type="button" onClick={prevModal}>
         <span><PrevArrow /></span>
       </button>
-      <button className="next-btn" type="button" onClick={nextModal}>
+      <button className="r-modal-next-btn" type="button" onClick={nextModal}>
         <span><NextArrow /></span>
       </button>
       <div className="modal-main">
@@ -37,8 +37,8 @@ const PhotoModal = ({
           <div className="modal-header">
             <img src={data.profile_pic} alt="profile" />
             <div className="modal-header-namedate">
-              <p>{moment(data.date).format('MMMM D, YYYY')}</p>
-              <p>{data.name}</p>
+              <p className="r-modal-header-date">{moment(data.date).format('MMM D, YYYY')}</p>
+              <p className="r-modal-header-name">{data.name}</p>
             </div>
           </div>
           <div className="modal-body">
@@ -47,7 +47,7 @@ const PhotoModal = ({
           </div>
           <div className="modal-footer">
             <h5>Purchased Item:</h5>
-            <div>
+            <div className="r-modal-footer-section">
               <img src={data.purchased_item_pic} alt="purchased" />
               <div className="modal-footer-info">
                 <p>{data.purchased_item_name}</p>
