@@ -29,6 +29,10 @@ const ReviewList = ({ reviews, handleClick }) => {
 
     // set the total number of pages
     setTotalPages(Math.ceil(reviews.length / 4));
+  } else if (reviews.length >= 1 && totalPages === 0) {
+    // load single page there's less than 4 reviews
+    setReviewPages([reviews]);
+    setTotalPages(1);
   }
 
   const changeCurrentPage = (nav) => {
