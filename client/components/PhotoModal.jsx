@@ -20,13 +20,13 @@ const PhotoModal = ({
 
   return (
     <div className={showHideClass} onClick={closeModal} onKeyPress={closeModal} role="button" tabIndex="0">
-      <button className="r-modal-exit-btn" type="button" onClick={closeModal}>
+      <button className="r-modal-exit-btn r-btn" type="button" onClick={closeModal}>
         <span><ExitArrow /></span>
       </button>
-      <button className="r-modal-prev-btn" type="button" onClick={prevModal}>
+      <button className="r-modal-prev-btn r-btn" type="button" onClick={prevModal}>
         <span><PrevArrow /></span>
       </button>
-      <button className="r-modal-next-btn" type="button" onClick={nextModal}>
+      <button className="r-modal-next-btn r-btn" type="button" onClick={nextModal}>
         <span><NextArrow /></span>
       </button>
       <div className="modal-main">
