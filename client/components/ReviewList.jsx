@@ -2,7 +2,7 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReviewListEntry from './ReviewListEntry';
 import ReviewListPageNav from './ReviewListPageNav';
@@ -23,15 +23,27 @@ const ReviewList = ({ reviews, handleClick }) => {
     return results;
   };
 
-  useEffect(() => {
+  if (reviews.length > 4 && totalPages === 0) {
     // split reviews array into arrays of 4;
     setReviewPages(splitReviews());
 
     // set the total number of pages
     setTotalPages(Math.ceil(reviews.length / 4));
-  }, [reviews]);
+  }
 
   const changeCurrentPage = (nav) => {
+    // const header = document.getElementById('focus');
+    // header.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start',
+    //   inline: 'start',
+    // });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+
     if (typeof nav === 'number') {
       setCurrentPage(nav);
     } else {
@@ -45,11 +57,11 @@ const ReviewList = ({ reviews, handleClick }) => {
 
   const handleNavBarClick = ({ target }) => {
     if (target.tagName === 'BUTTON') {
-      if (target.className.includes('page-button')) { // if page number is clicked
+      if (target.className.includes('page-nav')) { // if page number is clicked
+        changeCurrentPage(target.className);
+      } else { // if prev or next is clicked
         const index = target.innerText - 1;
         changeCurrentPage(index);
-      } else { // if prev or next is clicked
-        changeCurrentPage(target.className);
       }
     }
   };
