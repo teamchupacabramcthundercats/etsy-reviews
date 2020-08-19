@@ -72,9 +72,9 @@ describe('main page components', () => {
   });
 
   it('should render reviewlistentry components as loading', () => {
-    const wrapper = mount(<ReviewList reviews={sampleData} />);
+    const wrapper = shallow(<ReviewList reviews={sampleData} />);
     console.log(wrapper.debug());
-    expect(wrapper.text().includes('Loading...')).toBe(true);
+    expect(wrapper.find('ReviewListEntry').length).toBe(4);
   });
 
   it('should change value of select element', () => {
