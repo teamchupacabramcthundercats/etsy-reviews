@@ -20,7 +20,7 @@
 > Run 'npm install' to install all necessary dependencies.
 > Install mongoDB
 > Run 'npm seed-db' to seed mongo database with products and reviews.
-> Run 'npm run server' to start up the server
+> Run 'npm run start' to start up the server
 
 ## Requirements
 

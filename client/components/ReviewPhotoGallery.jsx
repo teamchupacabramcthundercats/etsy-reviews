@@ -31,7 +31,7 @@ const ReviewPhotoGallery = ({ attachedReviews, handleClick }) => {
   };
 
   const togglePrevNextDisplay = () => {
-    if (reviewPages.length === 1) {
+    if (reviewPages.length === 0 || reviewPages.length === 1) {
       setShowHidePrev(false);
       setShowHideNext(false);
     } else {

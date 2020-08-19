@@ -1,0 +1,21 @@
+# ignore hidden folders
+.git
+.circleci
+.vscode
+
+# ignore folders
+node_modules
+coverage
+photos
+tests
+
+# ignore config files
+.eslintrc.js
+.babelrc
+.eslintignore
+.gitignore
+webpack.config.js
+README.md
+STYLE-GUIDE.md
+api_keys.js
+DockerFile

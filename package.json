@@ -11,6 +11,7 @@
     "precommit": "lint-staged",
     "seed-db": "node ./db/seeding-script.js",
     "server": "nodemon ./server/start.js",
+    "start": "node ./server/start.js",
     "test": "jest --runInBand --detectOpenHandles",
     "check-config": "circleci config validate -c .circleci/config.yml",
     "build": "webpack --watch",
