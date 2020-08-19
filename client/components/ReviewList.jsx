@@ -36,13 +36,13 @@ const ReviewList = ({ reviews, handleClick }) => {
   }
 
   const changeCurrentPage = (nav) => {
-    // const header = document.getElementById('focus');
+    const header = document.getElementById('focus');
     // header.scrollIntoView({
     //   behavior: 'smooth',
     //   block: 'start',
     //   inline: 'start',
     // });
-    window.scrollTo({
+    header.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth',

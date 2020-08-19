@@ -6,6 +6,8 @@
 ## Related Projects
 
   - https://github.com/teamchupacabramcthundercats/etsy-gallery
+  - https://github.com/teamchupacabramcthundercats/etsy-gallery-proxy
+  - https://github.com/teamchupacabramcthundercats/etsy-reviews-proxy
 
 ## Table of Contents
 
@@ -16,23 +18,28 @@
 ## Usage
 
 > Run 'npm install' to install all necessary dependencies.
-> Run db/seeding-script.js to seed mongo database with products and reviews.
+> Install mongoDB
+> Run 'npm seed-db' to seed mongo database with products and reviews.
+> Run 'npm run server' to start up the server
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
+- Node v12.18.3
+- Axios v0.19.2
+- Express v4.1.0
+- Faker v4.1.0
+- Moment v2.27.0
+- Mongo v4.2.8
+- Mongoose v5.9.27
+- React v16.13.1
+- React-DOM v4.44.1
 
 ## Development
 
 ### Installing Dependencies
 
 From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
+- npm install
 
