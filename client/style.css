@@ -338,10 +338,6 @@
   box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
 }
 
-.r-modal-prev-btn:hover {
-
-}
-
 .prevarrow_svg__arrow {
   height: 24px;
   width: 24px;
@@ -381,6 +377,10 @@
 
 }
 
+.r-modal-exit-btn span {
+  pointer-events: none;
+}
+
 .exitsymbol_svg__arrow {
   height: 18px;
   width: 18px;
@@ -388,6 +388,18 @@
 
 .exitsymbol_svg__arrow path {
   fill: white;
+}
+
+.r-btn span {
+  pointer-events: none;
+}
+
+.r-btn svg {
+  pointer-events: none;
+}
+
+.r-btn:focus, .r-btn:active {
+  outline: 0;
 }
 
 
@@ -422,6 +434,10 @@
 
 .page-button:hover {
   background-color: rgba(34, 34, 34, 0.4);
+}
+
+.page-button:active, .page-button:focus {
+  outline: 0;
 }
 
 .page-button > * {

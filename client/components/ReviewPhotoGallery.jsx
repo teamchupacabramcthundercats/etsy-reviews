@@ -31,18 +31,23 @@ const ReviewPhotoGallery = ({ attachedReviews, handleClick }) => {
   };
 
   const togglePrevNextDisplay = () => {
-    // hide prev button if on first page or there's only one page of photos
-    if (currentPage === 0 || reviewPages.length === 1) {
-      setShowHidePrev(true);
-    } else {
+    if (reviewPages.length === 1) {
       setShowHidePrev(false);
-    }
-
-    // hide next button if on last page or there's only one page of photos
-    if (currentPage === reviewPages.length - 1 || reviewPages.length === 1) {
-      setShowHideNext(true);
-    } else {
       setShowHideNext(false);
+    } else {
+      // hide prev button if on first page or there's only one page of photos
+      if (currentPage === 0 && reviewPages.length > 1) {
+        setShowHidePrev(false);
+      } else {
+        setShowHidePrev(true);
+      }
+
+      // hide next button if on last page or there's only one page of photos
+      if (currentPage === reviewPages.length - 1 && reviewPages.length > 1) {
+        setShowHideNext(false);
+      } else {
+        setShowHideNext(true);
+      }
     }
   };
 
@@ -64,12 +69,12 @@ const ReviewPhotoGallery = ({ attachedReviews, handleClick }) => {
 
   useEffect(() => {
     togglePrevNextDisplay();
-  }, [currentPage]);
+  }, [currentPage, reviewPages]);
 
   return (
     <div className="review-gallery">
-      <button type="button" className={showHidePrev === false ? 'gallery-prev display-block' : 'gallery-prev display-none'} onClick={handleChangePage}>{prev}</button>
-      <button type="button" className={showHideNext === false ? 'gallery-next display-block' : 'gallery-next display-none'} onClick={handleChangePage}>{next}</button>
+      <button type="button" className={showHidePrev === true ? 'gallery-prev r-btn display-block' : 'gallery-prev r-btn display-none'} onClick={handleChangePage}>{prev}</button>
+      <button type="button" className={showHideNext === true ? 'gallery-next r-btn display-block' : 'gallery-next r-btn display-none'} onClick={handleChangePage}>{next}</button>
       <div className="review-gallery-title">
         <h4>Photos from reviews</h4>
       </div>
