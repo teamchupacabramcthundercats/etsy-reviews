@@ -1,4 +1,4 @@
-# Etsy Reviews Clone - Hack Reactor FEC Project
+# Etsy Reviews Component Recreation - Hack Reactor FEC Project
 
 > This is an attempt at recreating the reviews component on the Etsy website.
 > It's pulling fake reviews from a mongoDB database and pictures hosted in a S3 bucket to place into the React front-end.
